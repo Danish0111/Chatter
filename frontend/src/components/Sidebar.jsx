@@ -21,13 +21,13 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className=" h-full absolute flex justify-center items-center right-0">
+      {/* <div className=" h-full absolute flex justify-center items-center right-0">
         {isSidebarOpen ? (
           <ArrowRightCircleIcon className='size-10 text-primary bg-primary/40 rounded-full p-1' onClick={() => setIsSidebarOpen(false)} />
         ) : (
           <ArrowLeftCircleIcon className='size-10 text-primary bg-primary/40 rounded-full p-1' onClick={() => setIsSidebarOpen(true)} />
         )}
-      </div>
+      </div> */}
       <aside className={` w-16 lg:w-72 border-r border-base-300 overflow-y-auto scrollbar-hidden relative`}>
         <div className="w-full sticky top-0 bg-base-100 z-10">
           <div className="flex items-center justify-center lg:justify-normal gap-2 border-b border-base-300 p-5">

@@ -1,13 +1,13 @@
 import React from 'react'
 import { useState, useEffect, useRef } from 'react';
 import { useChatStore } from '../store/useChatStore';
-import { Image, Send, X } from 'lucide-react';
+import { Image, Loader, Loader2, Send, X } from 'lucide-react';
 
 const MessageInput = () => {
   const [text, setText] = useState("");
   const [imagePreview, setImagePreview] = useState(null);
   const fileInputRef = useRef(null);
-  const { sendMessage } = useChatStore();
+  const { isMessageSending, sendMessage } = useChatStore();
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -81,7 +81,11 @@ const MessageInput = () => {
           </button>
         </div>
         <button type="submit" className='btn btn-circle' disabled={!text.trim() && !imagePreview}>
-          <Send className='size-5' />
+          {isMessageSending ? (
+            <Loader2 className='animate-spin' size={22}/>
+          ) : (
+            <Send size={22} />
+          )}
         </button>
       </form>
     </div>
